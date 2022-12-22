@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Varela+Round&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(255, 216, 179);
+}
+nav {
+    font-family: 'Ubantu',sans-serif;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: white;
+}
+
+nav ul li {
+    padding: 0px 12px;
+}
+
+.logo img {
+    width: 92px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.container {
+    min-height: 72vh;
+    background-color: black;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    margin: 23px auto;
+    width: 70%;
+    border-radius: 12px;
+    padding: 34px;
+    background-image: url("https://builtin.com/sites/www.builtin.com/files/styles/og/public/blockchain-music-examples.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+}
+
+
+.bottom {
+    position: sticky;
+    height: 250px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#myProgressBar {
+    width: 80vw;
+    cursor: pointer;
+}
+
+.icons i {
+    cursor: pointer;
+    margin: 0px 15px;
+    color: white;
+}
+
+.songItemContainer {
+    margin-top: 74px;
+}
+
+
+.songItem {
+    height: 50px;
+    display: flex;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    margin: 12px 0;
+    
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+    box-shadow: 8px 5px 10px 2px rgba(0, 0, 0, 0.501);
+}
+.songItem img{
+    width: 90px;
+    /* margin: 0 23px; */
+    border-top-left-radius: 34px;
+    border-bottom-left-radius: 34px;
+    box-shadow: 1px 1px 8px 1px rgb(48, 48, 48);
+}
+
+.timeStamp {
+    margin: 0 23px;
+    width: 43px;
+}
+.timeStamp i {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.songInfo {
+    /* position: absolute; */
+    /* left: 10vw; */
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Varela',sans-serif;
+}
+.volumeGif {
+    width: 100px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
