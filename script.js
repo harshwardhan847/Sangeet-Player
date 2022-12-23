@@ -12,6 +12,7 @@ let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 
 
+
 let songs = [
     {
         songName:"Besharam Rang",
@@ -75,14 +76,47 @@ songItems.forEach((element,i)=>{
 
 audioElement.addEventListener('timeupdate', ()=>{
     //updaate seekbar
-    progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
+    let progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
     // console.log(progress);
     myProgressBar.value = progress;
     // myProgressBar.style.backgroundSize = progress;
+    // console.log(myProgressBar.value);
+    if(myProgressBar.value==100){
+        if(songIndex>=9){
+            songIndex = 0;
+        }
+        else{
+            songIndex++;
+        }
+        audioElement.src = songs[songIndex].filePath;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        masterPlay.classList.remove('fa-play');
+        masterPlay.classList.add('fa-pause');
+    
+        
+        masterSongName.innerHTML = songs[songIndex].songName;
+        gif.style.opacity = 1;
+    
+        if(songIndex =='0'){
+            document.getElementById('0').classList.add('fa-pause')
+            document.getElementById('0').classList.remove('fa-play')
+            document.getElementById(songs.length-1).classList.add('fa-play')
+            document.getElementById(songs.length-1).classList.remove('fa-pause')
+        }
+        else{
+            document.getElementById(songIndex).classList.add('fa-pause')
+            document.getElementById(songIndex).classList.remove('fa-play')
+            document.getElementById(songIndex-1).classList.add('fa-play')
+            document.getElementById(songIndex-1).classList.remove('fa-pause')
+        }
+        
+    }
 })
 
 myProgressBar.addEventListener('change',()=>{
     audioElement.currentTime = (myProgressBar.value/100)*audioElement.duration;
+    
 })
 
 const makeAllPlays = ()=>{
