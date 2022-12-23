@@ -76,12 +76,12 @@ songItems.forEach((element,i)=>{
 
 audioElement.addEventListener('timeupdate', ()=>{
     //updaate seekbar
-    let progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
+    let progress = parseInt((audioElement.currentTime/audioElement.duration)*1000000);
     // console.log(progress);
     myProgressBar.value = progress;
     // myProgressBar.style.backgroundSize = progress;
     // console.log(myProgressBar.value);
-    if(myProgressBar.value==100){
+    if(myProgressBar.value==1000000){
         if(songIndex>=9){
             songIndex = 0;
         }
@@ -115,7 +115,7 @@ audioElement.addEventListener('timeupdate', ()=>{
 })
 
 myProgressBar.addEventListener('change',()=>{
-    audioElement.currentTime = (myProgressBar.value/100)*audioElement.duration;
+    audioElement.currentTime = (myProgressBar.value/1000000)*audioElement.duration;
     
 })
 
